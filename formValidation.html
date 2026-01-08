@@ -66,7 +66,50 @@
                     $("#password2").css({"color": "black"});
                     $("#passwordE").css({"display": "none"});
                 }
-
+                // street name -> must be entered
+                if ($("#street").val().length === 0 || $("#street").val() !== $("#street2").val()){
+                    $("#street").css({"background-color": "red"});
+                    $("#street").css({"color": "white"});
+                    $("#street2").css({"background-color": "red"});
+                    $("#street2").css({"color": "white"});
+                    $("#streetE").css({"display": "block"});
+                }else{
+                    $("#street").css({"background-color": "white"});
+                    $("#street").css({"color": "black"});
+                    $("#street2").css({"background-color": "white"});
+                    $("#street2").css({"color": "black"});
+                    $("#streetE").css({"display": "none"});
+                    }
+                // city name -> must be entered
+                if($("#city").val().length === 0){
+                    $("#city").css({"background-color": "red"});
+                    $("#cityE").css({"display": "block"});
+                    $("#city").css({"color": "white"});
+                }else{
+                    $("#city").css({"background-color": "white"});
+                    $("#cityE").css({"display": "block"});
+                    $("#city").css({"color": "black"});
+                }
+                // zip name -> must be entered
+                if($("#zip").val().length < 5){
+                    $("#zip").css({"background-color": "red"});
+                    $("#zipE").css({"display": "block"});
+                    $("#zip").css({"color": "white"});
+                }else{
+                    $("#zip").css({"background-color": "white"});
+                    $("#zipE").css({"display": "block"});
+                    $("#zip").css({"color": "black"});
+                }
+                // username name -> must be entered
+                if($("#username").val().length === 0){
+                    $("#username").css({"background-color": "red"});
+                    $("#usernameE").css({"display": "block"});
+                    $("#username").css({"color": "white"});
+                }else{
+                    $("#username").css({"background-color": "white"});
+                    $("#usernameE").css({"display": "block"});
+                    $("#username").css({"color": "black"});
+                }
             });
         });
     </script>
@@ -88,10 +131,11 @@
     <br />
 
     <label for="street2">Address 2</label>
-    <input type="text" name="street2" id="street2" /><br />
+    <input type="text" name="street2" id="street2"/><br />
 
     <label for="city">City</label>
-    <input type="text" name="city" id="city" />
+    <input type="text" name="city" id="city" placeholder="City Name"/>
+    <div id="cityE" style="display:none">Please enter your city.</div>
     <label for="state">State</label>
     <select name="state" id="state">
         <option value="AL">Alabama</option>
@@ -147,7 +191,9 @@
         <option value="WY">Wyoming</option>
     </select>
     <label for="zip">Zip</label>
-    <input type="text" name="city" id="zip" /><br />
+    <input type="text" name="city" id="zip" placeholder="00000"/>
+    <div id="zipE" style="display:none">Please enter zip code.</div>
+    <br />
 
     <label for="phone">Phone</label>
     <input type="text" name="phone" id="phone" placeholder="123-123-1234"/><br />
@@ -161,7 +207,9 @@
     <input type="text" name="dob" id="dob" /><br />
 
     <label for="username">Username</label>
-    <input type="text" name="username" id="username" /><br />
+    <input type="text" name="username" id="username" placeholder="username123"/>
+    <div id="usernameE" style="display:none">Please enter your username.</div>
+    <br />
 
     <label for="password">Password</label>
     <input type="text" name="password" id="password" />
