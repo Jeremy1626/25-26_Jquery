@@ -110,6 +110,16 @@
                     $("#usernameE").css({"display": "block"});
                     $("#username").css({"color": "black"});
                 }
+                // DOB name -> must be entered
+                if($("#dob").val().length === 0){
+                    $("#dob").css({"background-color": "red"});
+                    $("#dobE").css({"display": "block"});
+                    $("#dob").css({"color": "white"});
+                }else{
+                    $("#dob").css({"background-color": "white"});
+                    $("#dobE").css({"display": "block"});
+                    $("#dob").css({"color": "black"});
+                }
             });
         });
     </script>
@@ -204,7 +214,9 @@
     <div id="emailE" style="display:none">Please enter a valid email.</div>
 
     <label for="dob">DOB</label>
-    <input type="text" name="dob" id="dob" /><br />
+    <input type="text" name="dob" id="dob" />
+    <div id="dobE" style="display:none">Please enter your DOB.</div>
+    <br />
 
     <label for="username">Username</label>
     <input type="text" name="username" id="username" placeholder="username123"/>
@@ -212,12 +224,12 @@
     <br />
 
     <label for="password">Password</label>
-    <input type="text" name="password" id="password" />
+    <input type="text" name="password" id="password" placeholder="Enter password"/>
     <div id="passwordE" style="display:none">Password must be at least 8 characters. Password and confirm password must match</div>
     <br />
 
     <label for="password2">Confirm Password</label>
-    <input type="text" name="password2" id="password2" /><br />
+    <input type="text" name="password2" id="password2" placeholder="Enter same password"/><br />
 
     <input type="checkbox" name="consent" id="consent">
     <label for="consent">I agree to receive mail every 2 seconds for your dumb products.</label><br />
